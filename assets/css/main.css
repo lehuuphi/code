@@ -1,0 +1,411 @@
+.header{
+    height:var(--header-height);
+    background-image: linear-gradient(0,#ff6433,#f6422e); /* mau nen */
+}
+.header__navbar-list{
+    /* bor dau cham li */
+    list-style: none;
+    padding-left: 0;
+    margin: 5px 0 0 0;
+    display: flex;
+}
+.header__navbar{
+   display:flex;
+   justify-content: space-between;
+}
+.header__navbar-item{
+    margin:0 5px ;
+    position: relative;
+}
+.header__navbar-user{
+ display: flex;
+ justify-items: center ;
+}
+.header__navbar-user-img{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.header__navbar-user-name{
+    font-size: 1.4rem;
+    margin-left: 9px;
+    font-weight: 400;
+}
+
+
+.header__navbar-item--has-qr:hover .header__qr{
+    display: block;
+}
+.header__navbar-item--has-notify:hover .head__notify {
+    display: block;
+}
+.header__navbar-item,
+.header__navbar-item-link,
+.header__navbar-list
+{
+    display: inline-block;
+    font-size: 1.2rem;
+    color: var(--white-color);      
+    text-decoration: none; /* bo dau gach chan */
+    font-weight: 300;
+    position: relative;
+}
+.header__navbar-list:hover,
+.header__navbar-item:hover,
+.header__navbar-item-link:hover{
+    color: rgb(134, 56, 56,0.7);   /* phương thức ấn vào là đổi màu  */
+    cursor: pointer;  /* dạng cn trỏ chuột : bàn tay */
+}
+.header__navbar-item--strong{
+    font-weight: 400;
+}
+.header__navbar-item--sparate::after{ /*  tạo gạch ngang nhỏ đầu cùng */
+    content: "";
+    display: block;
+    position: absolute ;
+    width: 1px;
+    height: 12px;
+    background-color:#f97869;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.header_navbar_icon-link{ /* icon thành màu trắng bỏ phần gạch chân */
+    color: var(--white-color);   
+    text-decoration: none;
+}
+.header_navbar-icon{
+   font-size: 1.5rem;
+   margin:0 4px; /* căn 2 icon */
+}
+.header__navbar-no-pointer{
+    cursor: text;
+    color: var(--white-color);
+}
+/* ma qr*/
+.header__qr{
+  color: var(--white-color);
+  width: 130px;
+  position:absolute;
+  left: 0;
+  top: 100%;
+  padding: 10px;
+  border-radius: 2px;
+  display: none; /* display hien thi : an */
+}
+.header__qr-img{
+    width: 160px;
+}
+.header__qr-apps{
+    display: flex;
+    justify-content: space-between;
+}
+.header__qr-link :nth-child(1){
+    margin-left: 10px;
+    /* con thuws nhat nt child*/
+}
+.header__qr-link :nth-child(2){
+    margin-right: 10px;
+}
+.header__qr-dowload-img{
+   height: 16px;
+}
+/* css thong bao */
+.head__notify{
+  position: absolute;
+  top: 150%;
+  right: 0;
+  width: 404px;
+  border: 1px solid #e7e7e7;
+  background-color: var(--white-color);
+  cursor:default;
+  animation: headNotifyGrowth ease-in 0.2s;
+  transform-origin: top right; /* đổi tâm chiếu góc bên */
+  display: none; /* an thong bao */
+}
+/* làm dấu nhọn thông báo */
+.head__notify::before{
+    content: "";
+    border-style: solid;
+    border-width: 21px 30px;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    right: 1px;
+    top: -31px;
+}
+
+@keyframes headNotifyGrowth {
+    from{
+        transform: scale(0);
+        opacity: 0; /* mờ hiện dần lên từ 0 đến 1*/
+    } 
+    to{
+        opacity: 1;
+        transform: (1);
+    }
+}
+.head__notify-header{
+ height: 40px;
+ background-color: var(--white-color);
+    
+}
+.head__notify-header h3{
+     font-weight: 400;
+     margin:  0 0 0 12px;
+     font-size: 1.5rem;
+    color:slategray;  
+    line-height: 40px;
+    user-select: none; /* khong cho coppy*/
+}
+
+.header__notify-list{
+ padding-left: 0;
+
+}
+.header__notify-item{
+  list-style: none; /* bo dau cham dau dong */
+}
+.header__notify-item :hover{/* bấm vào là đổi màu dùng hover*/
+    background-color: #f7f7f7;
+}
+
+.header__notify-item--viewed{ 
+    background-color: rgba(249,48,47,0.1);  
+}
+
+.header__notify-link{
+    width: 100%;
+    display: flex;
+    padding: 12px; /* khoang canh so voi  vien */
+    text-decoration: none; /* bo dau gach chan */ 
+}
+
+.header__notify-img{
+ width: 48px;
+ object-fit: contain; 
+}
+
+.header__notify-info{
+ color: #ff6433;
+ padding-left: 10px;
+}
+
+.header__notify-name{
+ display: block; /* xuong dong  */
+ font: size 1.7rem;;
+ color: var(--black-color);
+ font-weight: 550;
+}
+
+.header__notify-descriotion{
+display: block;
+font-size: 12px;
+color: var(--tet-color);
+}
+.header__notify-footer{
+ /*  text-align: center;  can chu ra giua */
+ display: flex;
+ 
+}
+.header__notify-footer-btn{
+    text-decoration: none;
+   padding: 10px 16px;
+   margin: auto;
+   font-size: 1.4rem;
+   font-weight: 400;
+   color: var(--tet-color);
+}
+/*
+.auth-form{
+        left: 100px;
+        top: 100px;
+        width: 100% 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgb(0,0,0); 
+        background-color: rgba(0,0,0,0.4); 
+} 
+*/
+/* phần tìm kiếm */
+.header-with-search{
+    height: var(--header-with-search-height);
+    display: flex;
+    align-items: center; /* can giua chieu cao */
+    margin: 0 8px;
+}
+.header__logo{
+    width: 200px;
+}
+.header-logo-shoppe{
+    width: 150px;
+}
+.header__search{
+ flex: 1;
+ height: 40px;
+ border-radius: 2px;
+ background-color:var(--white-color);
+ display: flex;
+ align-items: center;
+}
+.header__cart{
+    width:150px; 
+    text-align: center;
+    margin-top: 6px;
+    position: relative;
+}
+.header__cart-icon{
+    font-size: 2.8rem;
+    color: var(--white-color);
+}
+.header__cart-list{
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    background-color: var(--white-color);
+}
+
+
+
+.header__search-input-warp{
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+.header__search-input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.4rem;
+    color: var(--tet-color);
+    padding: 0 10px;
+    border-radius: 2px;
+}
+.header__search-selection{
+    border-left: 1px #ccc solid;
+    padding-left: 16px;
+    position: relative;
+
+}
+.header__search-selection-label{
+    font-size: 1.4rem;
+    color: var(--tet-color);
+}
+.header__search-selection-icon{
+    font-size: 1.4rem;
+    margin:0 16px 0 8px ;
+    position: relative;
+    top: 2px;
+    color: rgb(119, 117, 117);
+}
+.header__search-btn{
+   background-color: var(--primary-color);
+   border: none;
+   height: 34px;
+   width: 60px;
+   border-radius: 2px;
+   margin-right: 3px;
+   outline: none;
+}
+.header__search-btn:hover{
+    background-color: #f08977;
+    cursor: pointer;
+}
+.header__search-btn-icon{
+ font-size: 1.4rem;
+ color: var(--white-color);
+}
+.header__search-selection:hover .header__search-option{
+    display: block;
+}
+.header__search-option{
+ position: absolute;
+ right: 0;
+ top: 100%;
+ width: 170px;
+ list-style: none;
+
+ border-radius: 2px;
+ display: none
+}
+.header__search-option::after{
+  content: "";
+  display: block;
+  width: 125px;
+  height: 10px;
+  position: absolute;
+  top: -10px;
+  left: 0;
+  margin-left: 45px;
+}
+    
+.header__search-option-item{
+ background-color: var(--white-color);
+ border-radius: 2px;
+ padding: 8px 8px;
+}
+.header__search-option-item:hover {
+    background-color :#fafafa;
+    cursor: pointer;
+}
+
+.header__search-option-item span {
+  font-size: 1.4rem;
+  color: var(--tet-color);
+  margin-left: 8px;
+}
+.header__search-option-item i{
+   margin-left:  12px;        
+   display: none;
+}
+.header__search-option-item--active i {
+ display: inline-block;
+}
+
+.header__search-input:focus~.header__search-history{
+    display: block;
+}
+
+/* lịch sử tìm keiems */
+.header__search-history{
+ position: absolute;
+ top: calc(100% + 3px);
+ left: 0;
+ width: calc(100% - 16px);
+ background-color: var(--white-color);
+ border-radius: 2px;
+ box-shadow: 0 1px 3px #666;
+ display: none;
+}
+.header__search-history-heading{
+    margin: 8px 12px;
+    font-size: 1.4rem;
+    color: #999;
+    font-weight: 400;
+}
+ .header__search-history-list{
+     padding-left: 0;
+     list-style: none;
+     margin-bottom: 0 ;
+ }
+ .header__search-history-item{
+     height: 38px;
+     padding: 0 12px;
+ }
+ .header__search-history-item :hover{
+     background-color: #fafafa;
+ }
+.header__search-history-item a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    line-height: 38px;
+    color: var(--tet-color);
+    display: block;
+}
+/* test*/
+.grid__column-2{
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 16.666%;
+
+}

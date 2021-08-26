@@ -1,0 +1,31 @@
+:root {
+    --primary-color:#f94e2f;
+    --white-color : #fff; 
+    --black-color : #000;
+    --tet-color :#333;
+
+    --header-height:120px;
+    --navbar-height: 35px;
+    --header-with-search-height:calc(var(--header-height) - var(--navbar-height));
+}
+*{
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5% ;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.grid__full-width{
+    width: 100%;
+}
+.grid__row {
+    display: flex ; /* nam cung tren 1 hang ngang */
+    flex-wrap:wrap ;
+}
